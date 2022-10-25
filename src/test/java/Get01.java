@@ -51,5 +51,18 @@ Given
 
       //Do Assertion yap
         response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
+
+        // Status code u yazdır
+        System.out.println("StatusCode: " + response.getStatusCode());
+
+        System.out.println("ContentType: " + response.getContentType());
+
+        System.out.println("statusLine:" + response.statusLine());
+        System.out.println("n****************************");
+        //Bütün headersları yazdırmak için
+        System.out.print("Headers: " + response.getHeaders()+", ");
+
+        System.out.println("Header Server: " + response.getHeader("Server"));
+
     }
 }
