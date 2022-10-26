@@ -1,7 +1,10 @@
+import baseUrl.JasonPlaceHolderBaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.CoreMatchers.*;
 
 
 public class Get03 extends JasonPlaceHolderBaseUrl {
@@ -10,13 +13,34 @@ public class Get03 extends JasonPlaceHolderBaseUrl {
     @Test
     public void get01() {
 
-        spec.pathParams("first","todos","second",23);
+        spec.pathParams("first", "todos", "second", 23);
 
         //Expected Data
 
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
+
+        //Do Assertions
+        //1. yol (Hard Assert)
+        response.then().
+                assertThat()
+                .statusCode(200)
+                .contentType("application/json")
+                .body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit"))
+                .body("completed", equalTo(false)).
+                body("userId", equalTo(2));
+
+        //2. Yol
+        //Hard Assert
+        //Sadece body içersinde geöçerli bir soft assert
+        response.then()
+                .assertThat()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("title",equalTo("et itaque necessitatibus maxime molestiae qui quas velit"),
+                        "completed",equalTo(false),
+                        "userId",equalTo(2));
 
     }
 }
