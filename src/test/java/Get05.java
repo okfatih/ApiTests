@@ -10,19 +10,19 @@ public class Get05 extends RestfulBaseUrl {
     @Test
     public void get01() {
 
-        // Set the Url
         // https://restful-booker.herokuapp.com/booking?firstname=Ali&lastname=Cengiz
-        spec.pathParam("first","booking").queryParams("firstname","Ali","lastname","Cengiz");
+        // 1. Set The URL
+        spec.pathParam("first","booking").queryParams("firstname","Kimie","lastname","Jackie");
 
-        // Set the expected data
+        // 2. Set The Expected Data
 
-        //3. Send the Request and get the respons
-        Response response = given().spec(spec).when().get("{first}");
+        // 3. Send The Request And Get The Response
+        Response response=given().spec(spec).when().get("/{first}");
         response.prettyPrint();
 
-        //4.Do assertion
-       assertEquals(200,response.getStatusCode());
-       assertTrue(response.asString().contains("bookingid"));
+        // 4. Do Assertion
+        assertEquals(200,response.getStatusCode());
+        assertTrue(response.asString().contains("bookingid"));
 
     }
 }
