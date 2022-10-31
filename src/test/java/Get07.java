@@ -1,7 +1,6 @@
-import baseUrl.JasonPlaceHolderBaseUrl;
+import baseUrl.JsonPlaceHolderBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import org.junit.Assert;
 import org.junit.Test;
 import org.testng.asserts.*;
 
@@ -11,7 +10,7 @@ import static io.restassured.RestAssured.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class Get07 extends JasonPlaceHolderBaseUrl {
+public class Get07 extends JsonPlaceHolderBaseUrl {
 
     @Test
     public void get01() {
@@ -48,6 +47,9 @@ public class Get07 extends JasonPlaceHolderBaseUrl {
         assertTrue("Title'lardan bir tanesi içermemektedir",titles.contains("delectus aut autem"));
         assertTrue("Title'lardan bir tanesi delectus aut autem içermemktedir",
         titles.stream().anyMatch(t->t.equals("delectus aut autem")));
+
+        List<String>titles2 = json.getList("findAll{it.id>5}.title");
+        System.out.println("titles2 = " + titles2);
 
     }
 }

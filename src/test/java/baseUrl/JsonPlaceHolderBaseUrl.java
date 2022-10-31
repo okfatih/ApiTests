@@ -3,9 +3,8 @@ package baseUrl;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
-import org.junit.Test;
 
-public class JasonPlaceHolderBaseUrl {
+public class JsonPlaceHolderBaseUrl {
     protected RequestSpecification spec;
 
     @Before

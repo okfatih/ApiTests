@@ -1,4 +1,4 @@
-import baseUrl.JasonPlaceHolderBaseUrl;
+import baseUrl.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class Get04 extends JasonPlaceHolderBaseUrl {
+public class Get04 extends JsonPlaceHolderBaseUrl {
     @Test
     public void get01() {
 
