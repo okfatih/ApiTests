@@ -79,6 +79,8 @@ public class Get09 extends AutomationExerciseBase {
         softAssert.assertEquals(13, kids.size());
 
         System.out.println("Number of brands :  " + brands.size());
+        softAssert.assertAll();
+
     }
 }
 /*
