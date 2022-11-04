@@ -19,7 +19,7 @@ public class Get11 extends GoRestBaseUrl {
         response.prettyPrint();
         //Do Assertion
         response.then().assertThat().body("meta.pagination.limit", equalTo(10),
-                "meta.pagination.links.current", equalTo("https://gorest.co.in/public/v1/users?page=1"), "" +
+                "meta.pagination.links.current", equalTo("https://gorest.co.in/public/v1/users?page=1"),
                         "data", hasSize(10), "data.status", hasItem("active"),
                 "data.name", hasItems("Pres. Amarnath Dhawan", "Sujata Chaturvedi", "Navin Panicker"));
 
@@ -38,7 +38,7 @@ public class Get11 extends GoRestBaseUrl {
         }
         assertTrue(kadinSayisi<=genders.size()-kadinSayisi);
         //2 yol groovy ile
-        List<String>femalenames =    response.jsonPath().getList("data.findAll{it.gender=='female'}.name");
+        List<String>femalenames =  response.jsonPath().getList("data.findAll{it.gender=='female'}.name");
         System.out.println("femalenames = " + femalenames);
 
     }

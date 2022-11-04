@@ -1,9 +1,8 @@
 import baseUrl.JsonPlaceHolderBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
-import org.junit.Assert.*;
 import org.testng.asserts.SoftAssert;
-import test_data.JspnPlaceHolderTestData;
+import test_data.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -55,7 +54,7 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
                 .get("/{first}/{second}");
                 response.prettyPrint();
 
-        JspnPlaceHolderTestData jspTestData = new JspnPlaceHolderTestData();
+        JsonPlaceHolderTestData jspTestData = new JsonPlaceHolderTestData();
         //JsonPlaceHolderTestData dosyasından cagırdımız expectedDataMap
         Map<String, Object>expectedDataMap = jspTestData.expectedDataMetjod(1,"quis ut nam facilis et officia qui",false);
 

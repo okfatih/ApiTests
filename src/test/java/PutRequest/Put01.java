@@ -5,7 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
-import test_data.JspnPlaceHolderTestData;
+import test_data.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +18,7 @@ public class Put01 extends JsonPlaceHolderBaseUrl {
     public void put1() {
         spec.pathParams("first", "todos", "second", 98);
         //Set the expected Data
-        JspnPlaceHolderTestData jsp = new JspnPlaceHolderTestData();
+        JsonPlaceHolderTestData jsp = new JsonPlaceHolderTestData();
         Map<String, Object> expectedData = jsp.expectedDataMetjod(21, "Wash the dishes", false);
         System.out.println("expectedData = " + expectedData);
 

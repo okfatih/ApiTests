@@ -5,7 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import org.testng.asserts.SoftAssert;
-import test_data.JspnPlaceHolderTestData;
+import test_data.JsonPlaceHolderTestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,10 +18,11 @@ public class Post01 extends JsonPlaceHolderBaseUrl {
     public void post1() {
         spec.pathParam("first", "todos");
         //Set the expected data
-        JspnPlaceHolderTestData jsonPlace = new JspnPlaceHolderTestData();
+        JsonPlaceHolderTestData jsonPlace = new JsonPlaceHolderTestData();
         Map<String, Object> expectedData = jsonPlace.expectedDataMetjod(55, "Tidy your room", false);
         //Send the Request and Get the response
         Response response = given()
+
                 .spec(spec).contentType(ContentType.JSON)
                 .body(expectedData)
                 .when()
