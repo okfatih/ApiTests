@@ -1,5 +1,8 @@
 package Pojos;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingDatesPojo {
 
     //tüm keyler için private variable lar oluştur
