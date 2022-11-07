@@ -9,6 +9,6 @@ public class AutomationExerciseBase {
 
     @Before
     public void setUp(){
-        spec = new RequestSpecBuilder().setBaseUri("https://automationexercise.com").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://automationexercise.com/api").build();
     }
 }

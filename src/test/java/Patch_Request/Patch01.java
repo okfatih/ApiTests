@@ -23,7 +23,11 @@ public class Patch01 extends JsonPlaceHolderBaseUrl {
         Map<String, Object> expectedData = obj.expectedDataMetjod(null, "Wash the dishes", null);
         System.out.println("expectedData = " + expectedData);
         //Send the Request and Get the Response
-        Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).patch("/{first}/{second}");
+        Response response = given()
+                .spec(spec)
+                .contentType(ContentType.JSON)
+                .body(expectedData)
+                .patch("/{first}/{second}");
         response.prettyPrint();
 
 
