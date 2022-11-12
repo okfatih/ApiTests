@@ -4,7 +4,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 
-public class ObjeMapperUtils {
+public class ObjectMapperUtils {
 
     private static ObjectMapper mapper;
 

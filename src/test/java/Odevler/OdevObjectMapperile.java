@@ -1,6 +1,6 @@
 package Odevler;
 
-import Utils.ObjeMapperUtils;
+
 import baseUrl.ReqresBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
